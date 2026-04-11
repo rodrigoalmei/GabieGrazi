@@ -12,7 +12,17 @@ document.querySelector("[data-flight-summary]").textContent = siteData.flightSum
 document.querySelector("[data-flight-contact]").textContent = siteData.flightContact;
 document.querySelector("[data-hosting-summary]").textContent =
   "As melhores regiões para se hospedar são Altiplano, Cabo Branco, Tambaú, Manaíra, Aeroclube, Bessa e Jardim Oceania.";
-document.querySelector("[data-closing-message]").textContent = siteData.closingMessage;
+const closingMessageRoot = document.querySelector("[data-closing-message]");
+closingMessageRoot.innerHTML = `
+  <div class="closing-message-stack">
+    <strong class="closing-message-title">${siteData.closingMessageTitle ?? ""}</strong>
+    <p class="closing-message-subtitle">${siteData.closingMessageSubtitle ?? ""}</p>
+    <p class="closing-message-intro">${siteData.closingMessageIntro ?? siteData.closingMessage}</p>
+    ${(siteData.closingMessageBody ?? []).map((paragraph) => `
+      <p class="closing-message-paragraph">${paragraph}</p>
+    `).join("")}
+  </div>
+`;
 
 document.querySelector("[data-confirmacao-link]").href = siteData.confirmacaoLink;
 document.querySelector("[data-map-iframe]").src = createIframeSrc(siteData.location.mapQuery);

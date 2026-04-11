@@ -17,7 +17,8 @@ export function setupGallery(items) {
     activeIndex = index;
     image.src = item.src;
     image.alt = item.alt;
-    title.textContent = item.title;
+    title.textContent = item.title ?? "";
+    title.hidden = !item.title;
     caption.textContent = item.caption;
 
     const buttons = thumbnails.querySelectorAll("button");

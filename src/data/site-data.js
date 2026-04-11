@@ -44,6 +44,20 @@ export const siteData = {
   eventDate: "2026-12-17T22:00:00-03:00",
   confirmacaoLink:
     "https://docs.google.com/forms/d/e/1FAIpQLSdGuVmgcKT80cCHjHgfR0FDWIIdvX9oSMM4nmrj7AhCAvzSnA/viewform?usp=header",
+  closingMessageTitle: "GRAÇAS A DEUS, MÉDICAS",
+  closingMessageSubtitle: "Gabrielle & Grazielle | Dezembro de 2026",
+  closingMessageIntro:
+    "Nada disso foi construído sozinhas. Por isso, dedicamos este espaço a quem foi base, sustento e amor em toda a nossa caminhada.",
+  closingMessageBody: [
+    "Médicas graças à fidelidade de Deus, que nos permitiu sonhar e nos proveu meios de alcançar.",
+    "À nossa Mãe, que foi o nosso porto, nossa direção, nosso chão, a força silenciosa da oração por trás de cada conquista e superação.",
+    "Ao nosso pai, que não pode estudar, mas trabalhou muito para esse luxo nos dar, principalmente quando tudo parecia desabar.",
+    "À nossa avó Marlene, que nos ensinou a contar com Deus fielmente, pois só Ele é quem nos faz viver contente.",
+    "Às nossas tias Ivone e Gracineide, que nos ensinaram a descansar o coração, acreditar na intercessão de Maria e na vela acesa em cima da pia.",
+    "Aos nossos tios Márcio, Tadeu e Marciel, que sempre foram mais que presença, foram direção. Com gestos simples, mas cheios de significado, nos ensinaram que família é quem permanece ao nosso lado. E, quando a distância dos nossos pais apertava o coração, foram eles o nosso abrigo, cuidado e proteção.",
+    "Ao amor que hoje vivemos com alegria, e que nos trouxe de volta a paz que existe na companhia.",
+    "E a toda a nossa família e amigos, que são com quem contamos todos os dias."
+  ],
   location: {
     name: "Centro de Convenções de João Pessoa - PB",
     address: "Rodovia PB-008, Km 5, Polo Turístico Cabo Branco, João Pessoa - PB",
