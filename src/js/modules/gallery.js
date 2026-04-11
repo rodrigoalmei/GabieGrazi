@@ -17,9 +17,14 @@ export function setupGallery(items) {
     activeIndex = index;
     image.src = item.src;
     image.alt = item.alt;
+    const hasTitle = Boolean(item.title);
+    const hasCaption = Boolean(item.caption);
     title.textContent = item.title ?? "";
-    title.hidden = !item.title;
-    caption.textContent = item.caption;
+    title.hidden = !hasTitle;
+    caption.textContent = item.caption ?? "";
+    caption.hidden = !hasCaption;
+    const captionRoot = root.querySelector(".gallery-caption");
+    captionRoot.hidden = !hasTitle && !hasCaption;
 
     const buttons = thumbnails.querySelectorAll("button");
     buttons.forEach((button, buttonIndex) => {

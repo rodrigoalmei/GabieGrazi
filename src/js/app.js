@@ -29,6 +29,29 @@ document.querySelector("[data-map-iframe]").src = createIframeSrc(siteData.locat
 document.querySelector("[data-location-link]").href = toMapsLink(siteData.location.mapQuery);
 document.querySelector("[data-route-link]").href = toDirectionsLink(siteData.location.mapQuery);
 
+const additionalGalleryItems = [
+  {
+    src: "./assets/images/gallery/site-8.jpg",
+    thumb: "./assets/images/gallery/site-8.jpg",
+    alt: "Gabrielle e Grazielle com os pais em foto de formatura"
+  },
+  {
+    src: "./assets/images/gallery/site-6.jpeg",
+    thumb: "./assets/images/gallery/site-6.jpeg",
+    alt: "Gabrielle segurando bandeira azul em foto de estÃºdio"
+  },
+  {
+    src: "./assets/images/gallery/site-7.jpeg",
+    thumb: "./assets/images/gallery/site-7.jpeg",
+    alt: "Grazielle segurando bandeira azul em foto de estÃºdio"
+  },
+  {
+    src: "./assets/images/gallery/site-5.jpeg",
+    thumb: "./assets/images/gallery/site-5.jpeg",
+    alt: "Gabrielle e Grazielle com a famÃ­lia em foto de formatura"
+  }
+];
+
 renderNavigation(siteData.navigation, document.querySelector("[data-nav]"));
 renderTags(siteData.hostingAreas, document.querySelector("[data-hosting-areas]"));
 renderHosting(siteData.hosting, document.querySelector("[data-hosting-list]"));
@@ -40,5 +63,5 @@ renderTourism(siteData.tourism, document.querySelector("[data-tourism-list]"));
 startCountdown(new Date(siteData.eventDate), document.querySelector("[data-countdown]"));
 setupNavigation();
 setupReveal();
-setupGallery(siteData.gallery);
+setupGallery([...additionalGalleryItems, ...siteData.gallery]);
 setupAudio(siteConfig);
