@@ -4,23 +4,35 @@ import { startCountdown } from "./modules/countdown.js";
 import { setupAudio } from "./modules/audio.js";
 import { setupGallery } from "./modules/gallery.js";
 import { setupNavigation, setupReveal } from "./modules/navigation.js";
-import { renderFoodGroups, renderHosting, renderNavigation, renderSimpleList, renderTags, renderTourism } from "./modules/renderers.js";
+import {
+  renderFoodGroups,
+  renderHosting,
+  renderNavigation,
+  renderSimpleList,
+  renderTags,
+  renderTourism
+} from "./modules/renderers.js";
 import { createIframeSrc, toDirectionsLink, toMapsLink } from "./modules/utils.js";
 
 document.querySelector("[data-hero-description]").textContent = siteData.heroDescription;
 document.querySelector("[data-flight-summary]").textContent = siteData.flightSummary;
 document.querySelector("[data-flight-contact]").textContent = siteData.flightContact;
 document.querySelector("[data-hosting-summary]").textContent =
-  "As melhores regiões para se hospedar são Altiplano, Cabo Branco, Tambaú, Manaíra, Aeroclube, Bessa e Jardim Oceania.";
+  "As melhores regioes para se hospedar sao Altiplano, Cabo Branco, Tambau, Manaira, Aeroclube, Bessa e Jardim Oceania.";
+
 const closingMessageRoot = document.querySelector("[data-closing-message]");
 closingMessageRoot.innerHTML = `
   <div class="closing-message-stack">
     <strong class="closing-message-title">${siteData.closingMessageTitle ?? ""}</strong>
     <p class="closing-message-subtitle">${siteData.closingMessageSubtitle ?? ""}</p>
     <p class="closing-message-intro">${siteData.closingMessageIntro ?? siteData.closingMessage}</p>
-    ${(siteData.closingMessageBody ?? []).map((paragraph) => `
+    ${(siteData.closingMessageBody ?? [])
+      .map(
+        (paragraph) => `
       <p class="closing-message-paragraph">${paragraph}</p>
-    `).join("")}
+    `
+      )
+      .join("")}
   </div>
 `;
 
@@ -36,19 +48,24 @@ const additionalGalleryItems = [
     alt: "Gabrielle e Grazielle com os pais em foto de formatura"
   },
   {
-    src: "./assets/images/gallery/site-6.jpeg",
-    thumb: "./assets/images/gallery/site-6.jpeg",
-    alt: "Gabrielle segurando bandeira azul em foto de estÃºdio"
+    src: "./assets/images/gallery/site-9.jpeg",
+    thumb: "./assets/images/gallery/site-9.jpeg",
+    alt: "Gabrielle e Grazielle com imagem religiosa em foto de estudio"
   },
   {
     src: "./assets/images/gallery/site-7.jpeg",
     thumb: "./assets/images/gallery/site-7.jpeg",
-    alt: "Grazielle segurando bandeira azul em foto de estÃºdio"
+    alt: "Grazielle segurando bandeira azul em foto de estudio"
   },
   {
-    src: "./assets/images/gallery/site-5.jpeg",
-    thumb: "./assets/images/gallery/site-5.jpeg",
-    alt: "Gabrielle e Grazielle com a famÃ­lia em foto de formatura"
+    src: "./assets/images/gallery/site-10.jpg",
+    thumb: "./assets/images/gallery/site-10.jpg",
+    alt: "Gabrielle e Grazielle em foto descontraida em embarcacao"
+  },
+  {
+    src: "./assets/images/gallery/site-11.jpeg",
+    thumb: "./assets/images/gallery/site-11.jpeg",
+    alt: "Gabrielle e Grazielle abracadas em foto de estudio"
   }
 ];
 
