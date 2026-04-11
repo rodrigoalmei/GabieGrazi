@@ -6,7 +6,7 @@
     <title>Gabrielle & Grazielle | Guia do Convidado</title>
     <meta
       name="description"
-      content="Guia do convidado do baile de formatura em Medicina de Gabrielle e Grazielle, com RSVP, hospedagem, passagens, restaurantes, beleza e dicas de João Pessoa."
+      content="Guia do convidado do baile de formatura em Medicina de Gabrielle e Grazielle, com Confirmação, hospedagem, passagens, restaurantes, beleza e dicas de João Pessoa."
     />
     <link
       rel="icon"
@@ -96,6 +96,45 @@
           </div>
         </section>
 
+        <section class="section gallery-section" id="galeria">
+          <div class="container">
+            <div class="section-heading reveal centered">
+              <p class="eyebrow">Galeria</p>
+              <h2>Momentos que seguem passando junto com a contagem regressiva</h2>
+            </div>
+            <div class="gallery-shell reveal" data-gallery>
+              <button
+                class="gallery-arrow gallery-arrow-prev"
+                type="button"
+                aria-label="Foto anterior"
+                data-gallery-prev
+              >
+                &lsaquo;
+              </button>
+              <div class="gallery-stage">
+                <img
+                  class="gallery-main-image"
+                  alt=""
+                  data-gallery-image
+                />
+                <div class="gallery-caption">
+                  <strong data-gallery-title></strong>
+                  <p data-gallery-caption></p>
+                </div>
+              </div>
+              <button
+                class="gallery-arrow gallery-arrow-next"
+                type="button"
+                aria-label="Próxima foto"
+                data-gallery-next
+              >
+                &rsaquo;
+              </button>
+              <div class="gallery-thumbnails" data-gallery-thumbnails></div>
+            </div>
+          </div>
+        </section>
+
         <section class="section section-event" id="evento">
           <div class="container two-column">
             <div class="section-heading reveal">
@@ -142,7 +181,7 @@
             <div class="highlight-card reveal">
               <div>
                 <p class="eyebrow">Confirmação de presença</p>
-                <h2>RSVP obrigatório até 13 de maio de 2026</h2>
+                <h2>Confirmação obrigatória até 13 de maio de 2026</h2>
                 <p>
                   A confirmação é indispensável para a organização do baile. O
                   destaque deste site é justamente facilitar esse passo para
@@ -152,7 +191,7 @@
               <div class="highlight-actions">
                 <a
                   class="button button-primary"
-                  data-rsvp-link
+                  data-confirmacao-link
                   target="_blank"
                   rel="noreferrer"
                   >Abrir Google Forms</a
@@ -220,12 +259,6 @@
                   >Abrir mapa</a
                 >
               </div>
-              <p class="map-note">
-                O site funciona hoje com links e iframe do Google Maps sem
-                precisar de chave. Se você quiser evoluir depois para a API, o
-                ponto de configuração já está preparado em
-                <code>src/js/config.js</code>.
-              </p>
             </div>
             <div class="map-frame reveal">
               <iframe
@@ -286,10 +319,6 @@
             <div class="section-heading reveal">
               <p class="eyebrow">Beleza</p>
               <h2>Make, cabelo e barbearias</h2>
-              <p>
-                Seleção do PDF organizada para facilitar a busca de
-                profissionais antes do baile.
-              </p>
             </div>
             <div class="beauty-grid">
               <div class="stack-card reveal">
@@ -309,10 +338,6 @@
             <div class="section-heading reveal">
               <p class="eyebrow">Gastronomia</p>
               <h2>Restaurantes, bares e lugares para aproveitar João Pessoa</h2>
-              <p>
-                O conteúdo abaixo foi organizado a partir do guia das formandas,
-                em blocos fáceis de navegar no celular.
-              </p>
             </div>
             <div class="category-list" data-food-groups></div>
           </div>
@@ -333,8 +358,7 @@
               <div class="mini-note">
                 <strong>Praias mais próximas das hospedagens</strong>
                 <p>
-                  Bessa, Cabo Branco, Tambaú e Camboinha aparecem no guia como
-                  opções práticas para banho.
+                  Bessa, Cabo Branco, Tambaú e Camboinha.
                 </p>
               </div>
             </div>
@@ -355,13 +379,9 @@
               <a class="button button-primary" href="#confirmacao"
                 >Confirmar presença</a
               >
-              <button
-                class="button button-secondary"
-                type="button"
-                data-audio-toggle
+              <a class="button button-secondary" href="#galeria"
+                >Ver galeria</a
               >
-                Ativar trilha sonora
-              </button>
             </div>
             <p class="audio-help">
               Para usar uma música sua, basta colocar o arquivo em
@@ -373,7 +393,7 @@
       </main>
     </div>
 
-    <audio id="event-audio" preload="auto"></audio>
+    <audio id="event-audio" preload="auto" playsinline autoplay></audio>
     <script type="module" src="./src/js/app.js"></script>
   </body>
 </html>

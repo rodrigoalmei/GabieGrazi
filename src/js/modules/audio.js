@@ -1,35 +1,53 @@
 export function setupAudio(config) {
   const audio = document.querySelector("#event-audio");
-  const button = document.querySelector("[data-audio-toggle]");
-  if (!audio || !button) return;
+  const playlist = config.audioPlaylist ?? [];
+  if (!audio || !playlist.length) return;
 
-  audio.src = config.audioSrc;
-  audio.loop = true;
+  let trackIndex = 0;
+  audio.autoplay = true;
+  audio.setAttribute("autoplay", "");
 
-  async function toggleAudio() {
+  function setTrack(index) {
+    trackIndex = (index + playlist.length) % playlist.length;
+    audio.src = playlist[trackIndex];
+    audio.load();
+  }
+
+  async function tryPlay() {
     try {
-      if (audio.paused) {
-        await audio.play();
-        button.textContent = "Pausar trilha sonora";
-      } else {
-        audio.pause();
-        button.textContent = "Ativar trilha sonora";
-      }
+      await audio.play();
+      return true;
     } catch {
-      button.textContent = "Arquivo de áudio não encontrado";
+      return false;
     }
   }
 
-  button.addEventListener("click", toggleAudio);
+  async function startPlayback() {
+    setTrack(trackIndex);
+    const started = await tryPlay();
+    if (started) return;
+
+    const resumeOnInteraction = async () => {
+      await tryPlay();
+    };
+
+    ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+      window.addEventListener(eventName, resumeOnInteraction, { once: true });
+    });
+  }
+
+  audio.addEventListener("ended", async () => {
+    setTrack(trackIndex + 1);
+    await tryPlay();
+  });
 
   if (config.enableAutoMusic) {
-    window.addEventListener("load", async () => {
-      try {
-        await audio.play();
-        button.textContent = "Pausar trilha sonora";
-      } catch {
-        button.textContent = "Ativar trilha sonora";
-      }
-    }, { once: true });
+    if (document.readyState === "complete") {
+      startPlayback();
+      return;
+    }
+
+    window.addEventListener("DOMContentLoaded", startPlayback, { once: true });
+    window.addEventListener("load", startPlayback, { once: true });
   }
 }

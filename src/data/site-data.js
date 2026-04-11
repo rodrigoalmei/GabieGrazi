@@ -1,8 +1,9 @@
 export const siteData = {
   navigation: [
     { id: "hero", label: "Início" },
+    { id: "galeria", label: "Galeria" },
     { id: "evento", label: "Baile" },
-    { id: "confirmacao", label: "RSVP" },
+    { id: "confirmacao", label: "Confirmação" },
     { id: "dress-code", label: "Dress code" },
     { id: "mapa", label: "Mapa" },
     { id: "passagens", label: "Passagens" },
@@ -13,9 +14,35 @@ export const siteData = {
     { id: "mensagem", label: "Mensagem" }
   ],
   heroDescription:
-    "Um guia pensado para quem vai celebrar essa conquista junto delas, com informações práticas, visual elegante e tudo organizado para funcionar bem no celular.",
+    "Um guia pensado para quem vai celebrar essa conquista conosco, com informações práticas, visual elegante e tudo organizado para funcionar bem no celular.",
+  gallery: [
+      {
+      caption: "À nossa Mãe, que foi o nosso porto, nossa direção, nosso chão, a força silenciosa da oração por trás de cada conquista e superação. Ao nosso pai, que não pôde estudar, mas trabalhou muito para esse luxo nos dar, principalmente quando tudo parecia desabar,",
+      src: "./assets/images/gallery/site-4.jpeg",
+      thumb: "./assets/images/gallery/site-4.jpeg",
+      alt: "Gabrielle e Grazielle segurando bandeira azul em foto de estúdio"
+    },
+    {
+      caption: "À nossa avó Marlene, que nos ensinou a contar com Deus fielmente, pois só Ele é quem nos faz viver contente, às nossas tias: Ivone e Gracineide, que nos ensinaram a descansar o coração, acreditar na intercessão de Maria e na vela acesa em cima da pia.",
+      src: "./assets/images/gallery/site-1.png",
+      thumb: "./assets/images/gallery/site-1.png",
+      alt: "Ilustração de Gabrielle e Grazielle com becas de formatura"
+    },
+    {
+      caption: "Aos nossos tios Márcio, Tadeu e Marciel, que sempre foram mais que presença, foram direção. Com gestos simples, mas cheios de significado, nos ensinaram que família é quem permanece ao nosso lado. E, quando a distância dos nossos pais apertava o coração, foram eles o nosso abrigo, cuidado e proteção",
+      src: "./assets/images/gallery/site-3.jpg",
+      thumb: "./assets/images/gallery/site-3.jpg",
+      alt: "Gabrielle e Grazielle posando juntas em foto casual"
+    },
+        {
+      caption: "E a toda a nossa família e amigos, que são com quem contamos todos os dias. Médicas graças à fidelidade de Deus, que nos permitiu sonhar e nos proveu meios de alcançar.",
+      src: "./assets/images/gallery/site-2.jpg",
+      thumb: "./assets/images/gallery/site-2.jpg",
+      alt: "Gabrielle e Grazielle em retrato elegante"
+    }
+  ],
   eventDate: "2026-12-17T22:00:00-03:00",
-  rsvpLink:
+  confirmacaoLink:
     "https://docs.google.com/forms/d/e/1FAIpQLSdGuVmgcKT80cCHjHgfR0FDWIIdvX9oSMM4nmrj7AhCAvzSnA/viewform?usp=header",
   location: {
     name: "Centro de Convenções de João Pessoa - PB",

@@ -12,16 +12,17 @@
 
 .hero-backdrop {
   background:
-    linear-gradient(135deg, rgba(73, 20, 52, 0.82), rgba(130, 0, 67, 0.74) 46%, rgba(96, 100, 57, 0.72)),
+    linear-gradient(135deg, rgba(73, 20, 52, 0.9), rgba(130, 0, 67, 0.84) 46%, rgba(96, 100, 57, 0.72)),
+    url("../../assets/images/backgrounds/fundo-1.jpeg") center / 460px,
     var(--color-wine);
   clip-path: ellipse(120% 100% at 50% 0%);
 }
 
 .hero-pattern {
-  background-image: url("../../assets/images/decor/pattern.png");
-  background-size: 520px;
-  mix-blend-mode: soft-light;
-  opacity: 0.2;
+  background-image: url("../../assets/images/backgrounds/fundo-2.jpeg");
+  background-size: 420px;
+  mix-blend-mode: screen;
+  opacity: 0.08;
 }
 
 .hero-section .container {
@@ -249,6 +250,125 @@ h3 {
   color: var(--color-muted);
 }
 
+.gallery-section {
+  position: relative;
+}
+
+.gallery-section::before,
+.section-closing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../../assets/images/backgrounds/fundo-2.jpeg");
+  background-size: 420px;
+  opacity: 0.045;
+  pointer-events: none;
+}
+
+.gallery-shell,
+.section-closing .closing-card {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-shell {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  margin-top: 34px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-stage {
+  position: relative;
+  min-height: 380px;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  background: linear-gradient(180deg, rgba(57, 37, 48, 0.96), rgba(82, 30, 58, 0.92));
+}
+
+.gallery-main-image {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.gallery-caption {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  padding: 18px 20px;
+  color: var(--color-white);
+  background: linear-gradient(180deg, rgba(73, 20, 52, 0.1), rgba(73, 20, 52, 0.82));
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.gallery-caption strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.gallery-caption p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.gallery-arrow {
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-magenta), var(--color-wine));
+  box-shadow: var(--shadow-card);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.gallery-thumbnails {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-thumb {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), border-color var(--transition), opacity var(--transition);
+}
+
+.gallery-thumb img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.gallery-thumb.is-active {
+  border-color: var(--color-magenta);
+  transform: translateY(-4px);
+}
+
+.gallery-thumb:not(.is-active) {
+  opacity: 0.74;
+}
+
 .section-event {
   margin-top: 12px;
 }
@@ -316,8 +436,8 @@ h3 {
 .stack-card,
 .mini-note {
   padding: 24px;
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(73, 20, 52, 0.08);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(73, 20, 52, 0.1);
 }
 
 .rule-card p,
@@ -367,8 +487,8 @@ h3 {
 .tour-card,
 .category-card {
   padding: 24px;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(73, 20, 52, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(73, 20, 52, 0.1);
 }
 
 .handle,
@@ -499,6 +619,7 @@ h3 {
 .audio-help {
   margin-top: 18px;
   font-size: 0.95rem;
+  display: none;
 }
 
 .reveal {
@@ -539,6 +660,19 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .gallery-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-stage,
+  .gallery-main-image {
+    min-height: 320px;
+  }
+
+  .gallery-arrow {
+    display: none;
+  }
+
   .category-item {
     flex-direction: column;
   }
@@ -559,5 +693,21 @@ h3 {
   .rule-card,
   .event-panel {
     padding: 22px;
+  }
+
+  .gallery-stage,
+  .gallery-main-image {
+    min-height: 280px;
+  }
+
+  .gallery-caption {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    padding: 16px;
+  }
+
+  .gallery-thumbnails {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
