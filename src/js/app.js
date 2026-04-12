@@ -18,7 +18,7 @@ document.querySelector("[data-hero-description]").textContent = siteData.heroDes
 document.querySelector("[data-flight-summary]").textContent = siteData.flightSummary;
 document.querySelector("[data-flight-contact]").textContent = siteData.flightContact;
 document.querySelector("[data-hosting-summary]").textContent =
-  "As melhores regioes para se hospedar sao Altiplano, Cabo Branco, Tambau, Manaira, Aeroclube, Bessa e Jardim Oceania.";
+  "As melhores regiões para se hospedar são Altiplano, Cabo Branco, Tambaú, Manaíra, Aeroclube, Bessa e Jardim Oceania.";
 
 const closingMessageRoot = document.querySelector("[data-closing-message]");
 closingMessageRoot.innerHTML = `
