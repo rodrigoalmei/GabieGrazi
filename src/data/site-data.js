@@ -60,7 +60,7 @@ export const siteData = {
     mapQuery: "Centro de Convenções de João Pessoa PB"
   },
   flightSummary:
-    "O guia recomenda verificar voos tanto para João Pessoa quanto para Recife, porque em muitos casos Recife aparece com tarifas mais baratas. A viagem entre Recife e João Pessoa leva em média de 1h30 a 2h, de carro ou ônibus.",
+    "Recomenda-se verificar voos tanto para João Pessoa quanto para Recife, pois, em muitos casos, Recife apresenta tarifas mais baratas. A viagem entre Recife e João Pessoa leva, em média, de 1h30 a 2h, de carro ou ônibus.",
   flightContact: "Dorinha Tour | WhatsApp: (83) 99636-0088",
   hostingAreas: ["Altiplano", "Cabo Branco", "Tambaú", "Manaíra", "Aeroclube", "Bessa", "Jardim Oceania"],
   hosting: [
@@ -253,7 +253,7 @@ export const siteData = {
     },
     {
       title: "Praias para banho perto das hospedagens",
-      description: "No próprio guia, Bessa, Cabo Branco, Tambaú e Camboinha aparecem como as melhores faixas de praia para quem quer banho e praticidade.",
+      description: "Bessa, Cabo Branco, Tambaú e Camboinha aparecem como as melhores faixas de praia para quem quer banho e praticidade.",
       howToGo: "Todas podem ser alcançadas com facilidade a partir das principais áreas de hospedagem.",
       place: "Orla de João Pessoa",
       bestTime: "Bessa: 8h-11h | Cabo Branco: 7h-10h | Tambaú: 7h-10h | Camboinha: 9h-11h"
