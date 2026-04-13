@@ -294,7 +294,7 @@ h3 {
   overflow: hidden;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
-  background: linear-gradient(180deg, rgba(57, 37, 48, 0.96), rgba(82, 30, 58, 0.92));
+  background: transparent;
 }
 
 .gallery-main-image {
@@ -356,7 +356,7 @@ h3 {
   border: 2px solid transparent;
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.82);
+  background: transparent;
   box-shadow: var(--shadow-card);
   transition: transform var(--transition), border-color var(--transition), opacity var(--transition);
 }
@@ -444,6 +444,45 @@ h3 {
 
 .rules-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dresscode-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+  align-items: start;
+}
+
+.dresscode-look {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(73, 20, 52, 0.1);
+  box-shadow: var(--shadow-soft);
+}
+
+.dresscode-look img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.dresscode-look-copy {
+  padding: 16px 18px 18px;
+}
+
+.dresscode-look-copy strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-wine);
+}
+
+.dresscode-look-copy p {
+  margin: 0;
+  color: var(--color-muted);
 }
 
 .rule-card,
@@ -713,6 +752,10 @@ h3 {
   }
 
   .gallery-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .dresscode-gallery {
     grid-template-columns: 1fr;
   }
 
