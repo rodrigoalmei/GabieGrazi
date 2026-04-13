@@ -14,7 +14,7 @@ export const siteData = {
     { id: "mensagem", label: "Mensagem" }
   ],
   heroDescription:
-    "Um guia pensado para quem vai celebrar essa conquista conosco, com informações práticas, visual elegante e tudo organizado para funcionar bem no celular.",
+    "Preparamos este site com muito carinho para ser o seu guia nesse momento tão especial. Ele foi pensado para receber você, que faz parte da nossa história e da realização desse sonho. Aqui, reunimos informações práticas de forma leve, organizada e fácil, para que sua experiência seja tranquila e você não precise se preocupar com nada, apenas aproveitar. Mais do que orientar, este espaço é um convite: queremos você conosco para viver esse dia inesquecível. 💫",
   gallery: [
     {
       src: "./assets/images/gallery/site-4.jpeg",
