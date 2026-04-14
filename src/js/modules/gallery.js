@@ -17,6 +17,9 @@ export function setupGallery(items) {
     activeIndex = index;
     image.src = item.src;
     image.alt = item.alt;
+    image.style.objectFit = item.imageFit ?? "";
+    image.style.objectPosition = item.imagePosition ?? "";
+    image.style.background = item.imageBackground ?? "";
     const hasTitle = Boolean(item.title);
     const hasCaption = Boolean(item.caption);
     title.textContent = item.title ?? "";
@@ -54,7 +57,15 @@ export function setupGallery(items) {
       aria-label="Abrir foto ${index + 1}"
       aria-pressed="false"
     >
-      <img src="${item.thumb}" alt="${item.alt}" />
+      <img
+        src="${item.thumb}"
+        alt="${item.alt}"
+        style="
+          object-fit: ${item.thumbFit ?? "cover"};
+          object-position: ${item.thumbPosition ?? "center"};
+          background: ${item.thumbBackground ?? "transparent"};
+        "
+      />
     </button>
   `).join("");
 
