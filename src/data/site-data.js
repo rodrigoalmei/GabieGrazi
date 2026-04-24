@@ -2,6 +2,7 @@ export const siteData = {
   navigation: [
     { id: "hero", label: "Início" },
     { id: "galeria", label: "Galeria" },
+    { id: "midia", label: "Midia" },
     { id: "evento", label: "Baile" },
     { id: "confirmacao", label: "Confirmação" },
     { id: "dress-code", label: "Dress code" },
@@ -37,7 +38,7 @@ export const siteData = {
       alt: "Gabrielle e Grazielle em retrato elegante"
     }
   ],
-  eventDate: "2026-12-17T22:00:00-03:00",
+  eventDate: "2026-12-16T22:00:00-03:00",
   confirmacaoLink:
     "https://docs.google.com/forms/d/e/1FAIpQLSdGuVmgcKT80cCHjHgfR0FDWIIdvX9oSMM4nmrj7AhCAvzSnA/viewform?usp=header",
   closingMessageTitle: "GRAÇAS A DEUS, MÉDICAS",
